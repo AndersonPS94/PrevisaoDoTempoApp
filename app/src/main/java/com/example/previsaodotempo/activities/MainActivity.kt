@@ -36,9 +36,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun eventoClique() {
 
-        binding.imageButton.setOnClickListener {
+        binding.btnCityDetails.setOnClickListener {
             intent = Intent(applicationContext, CityDetailsActivity::class.java)
             startActivity(intent)
+            }
 
             binding.btnToday.setOnClickListener {
                 binding.ViewPagerPrincipal.currentItem = 0
@@ -59,4 +60,3 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}
