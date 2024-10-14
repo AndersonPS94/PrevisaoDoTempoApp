@@ -1,14 +1,14 @@
-package com.example.previsaodotempo.view
+package com.example.previsaodotempo.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.previsaodotempo.R
 import com.example.previsaodotempo.adapters.ViewPagerAdapter
 import com.example.previsaodotempo.databinding.ActivityMainBinding
+import com.example.previsaodotempo.fragments.NextDaysFragment
+import com.example.previsaodotempo.fragments.TodayFragment
+import com.example.previsaodotempo.fragments.TomorrowFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -35,9 +35,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun eventoClique() {
-        binding.textNomeCidade.setOnClickListener {
+
+        binding.imageButton.setOnClickListener {
             intent = Intent(applicationContext, CityDetailsActivity::class.java)
             startActivity(intent)
+
+            binding.btnToday.setOnClickListener {
+                binding.ViewPagerPrincipal.currentItem = 0
+                intent = Intent(applicationContext, TodayFragment::class.java)
+                startActivity(intent)
+            }
+
+            binding.btnTomorrow.setOnClickListener {
+                binding.ViewPagerPrincipal.currentItem = 1
+                intent = Intent(applicationContext, TomorrowFragment::class.java)
+                startActivity(intent)
+            }
+
+            binding.btnNextDays.setOnClickListener {
+                binding.ViewPagerPrincipal.currentItem = 2
+                intent = Intent(applicationContext, NextDaysFragment::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

@@ -1,12 +1,9 @@
-package com.example.previsaodotempo.view
+package com.example.previsaodotempo.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.previsaodotempo.R
 import com.example.previsaodotempo.databinding.ActivityCityDetailsBinding
 
 class CityDetailsActivity : AppCompatActivity() {

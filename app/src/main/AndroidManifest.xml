@@ -15,10 +15,10 @@
         android:theme="@style/Theme.Previsaodotempo"
         tools:targetApi="31">
         <activity
-            android:name=".view.CityDetailsActivity"
+            android:name=".activities.CityDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

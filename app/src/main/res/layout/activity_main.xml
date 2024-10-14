@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Preto_background"
-    tools:context=".view.MainActivity">
+    tools:context=".activities.MainActivity">
 
     <TextView
         android:id="@+id/textNomeCidade"
@@ -257,15 +257,16 @@
         app:srcCompat="@drawable/backgroundshapeitem" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnCityDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/Preto_background_secundario"
-        android:tint="@color/cinza"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:srcCompat="@drawable/category_24" />
+        app:srcCompat="@drawable/category_24"
+        app:tint="@color/cinza"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

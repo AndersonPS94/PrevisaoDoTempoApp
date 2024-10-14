@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/Preto_background"
     android:backgroundTint="@color/Preto_background"
-    tools:context=".view.CityDetailsActivity">
+    tools:context=".activities.CityDetailsActivity">
 
     <ImageView
         android:id="@+id/imageView2"
