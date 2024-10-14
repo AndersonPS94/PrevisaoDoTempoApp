@@ -78,16 +78,19 @@
         app:tabTextColor="@color/cinza">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/btnToday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Today" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/btnTomorrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tomorrow" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/btnNextDays"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next 10 days" />

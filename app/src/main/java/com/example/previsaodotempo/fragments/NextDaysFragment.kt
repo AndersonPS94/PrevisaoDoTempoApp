@@ -1,4 +1,4 @@
-package com.example.previsaodotempo
+package com.example.previsaodotempo.fragments
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -6,14 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.previsaodotempo.R
+import com.example.previsaodotempo.vielmodel.NextDaysViewModel
 
-class TodayFragment : Fragment() {
+class NextDaysFragment : Fragment() {
 
     companion object {
-        fun newInstance() = TodayFragment()
+        fun newInstance() = NextDaysFragment()
     }
 
-    private val viewModel: TodayViewModel by viewModels()
+    private val viewModel: NextDaysViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,6 @@ class TodayFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_today, container, false)
+        return inflater.inflate(R.layout.fragment_next_days, container, false)
     }
 }

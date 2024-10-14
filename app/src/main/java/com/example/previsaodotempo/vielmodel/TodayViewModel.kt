@@ -1,4 +1,4 @@
-package com.example.previsaodotempo
+package com.example.previsaodotempo.vielmodel
 
 import androidx.lifecycle.ViewModel
 
