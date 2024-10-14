@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cinza">#87898B</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="Preto_background">#1C1E1F</color>
+    <color name="Preto_background_secundario">#202329</color>
+</resources>
