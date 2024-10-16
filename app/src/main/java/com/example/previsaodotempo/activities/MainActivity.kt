@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         eventoClique()
         inicializarNavegaçaoAbas()
-
-
     }
 
     private fun inicializarNavegaçaoAbas() {
