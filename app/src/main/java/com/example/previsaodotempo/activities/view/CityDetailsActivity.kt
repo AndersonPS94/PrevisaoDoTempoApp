@@ -1,4 +1,4 @@
-package com.example.previsaodotempo.activities
+package com.example.previsaodotempo.activities.view
 
 import android.content.Intent
 import android.os.Bundle

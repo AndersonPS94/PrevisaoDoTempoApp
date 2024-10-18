@@ -7,9 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.previsaodotempo.R
+import com.example.previsaodotempo.adapters.NextDaysAdapter
+import com.example.previsaodotempo.databinding.FragmentNextDaysBinding
 import com.example.previsaodotempo.vielmodel.NextDaysViewModel
 
 class NextDaysFragment : Fragment() {
+
+    private lateinit var binding: FragmentNextDaysBinding
+    //private lateinit var viewModel: NextDaysViewModel
+    private lateinit var adapter: NextDaysAdapter
 
     companion object {
         fun newInstance() = NextDaysFragment()
