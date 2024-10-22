@@ -6,33 +6,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.previsaodotempo.R
-import com.example.previsaodotempo.adapters.NextDaysAdapter
+import com.example.previsaodotempo.adapters.WeeklyAdapter
 import com.example.previsaodotempo.databinding.FragmentNextDaysBinding
-import com.example.previsaodotempo.vielmodel.NextDaysViewModel
+import com.example.previsaodotempo.vielmodel.WeatherViewModel
 
 class NextDaysFragment : Fragment() {
 
+    private lateinit var viewModel: WeatherViewModel
     private lateinit var binding: FragmentNextDaysBinding
-    //private lateinit var viewModel: NextDaysViewModel
-    private lateinit var adapter: NextDaysAdapter
-
-    companion object {
-        fun newInstance() = NextDaysFragment()
-    }
-
-    private val viewModel: NextDaysViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
+    private lateinit var adapter: WeeklyAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_next_days, container, false)
+    ): View? {
+        binding = FragmentNextDaysBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(requireActivity()).get(WeatherViewModel::class.java)
+
+        viewModel.weeklyWeather.observe(viewLifecycleOwner) { weather ->
+            adapter.updateData(weather.time, weather.temperature_2m_min, weather.temperature_2m_max)
+        }
     }
 }
