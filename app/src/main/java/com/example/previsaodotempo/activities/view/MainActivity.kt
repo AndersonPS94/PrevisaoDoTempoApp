@@ -1,17 +1,11 @@
 package com.example.previsaodotempo.activities.view
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.previsaodotempo.adapters.ViewPagerAdapter
 import com.example.previsaodotempo.databinding.ActivityMainBinding
-import com.example.previsaodotempo.fragments.NextDaysFragment
-import com.example.previsaodotempo.fragments.TodayFragment
-import com.example.previsaodotempo.fragments.TomorrowFragment
-import com.example.previsaodotempo.model.data.Hourly
-import com.example.previsaodotempo.vielmodel.WeatherViewModel
+import com.example.previsaodotempo.viewmodel.WeatherViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import java.util.Calendar
 
@@ -26,27 +20,27 @@ class MainActivity : AppCompatActivity() {
         // Inicializando o ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        inicializandoNavegacaoAbas()
-        RecuperandoDados()
+        inicializarNavegacaoAbas()
+        recuperarDados()
     }
 
-    private fun RecuperandoDados() {
+    private fun recuperarDados() {  // Nome ajustado para camelCase
         // Configurando o ViewModel
         viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
-        //Observando o estado da previsao do tempo
+        // Observando o estado da previsão do tempo
         viewModel.todayWeather.observe(this) {
             // Atualizando a cidade, temperatura e hora
             binding.textNomeCidade.text = "São Paulo"  // Cidade fixa
-            // Temperatura atualiza de acordo com a api
+            // Temperatura atualizada de acordo com a API
             binding.textTemperaturaAtual.text = "${it.temperature_2m[0]}º"
             // Atualizando o horário em tempo real
             binding.textDiaMesSemana.text = getCurrentTime()
         }
     }
 
-    private fun inicializandoNavegacaoAbas() {
+    private fun inicializarNavegacaoAbas() {  // Nome ajustado para camelCase
         val tabLayout = binding.tabLayoutInfo
-        val viewPager = binding.ViewPagerPrincipal
+        val viewPager = binding.viewpagerPrincipal // camelCase
 
         // Lista de títulos das abas
         val abas = listOf("Today", "Tomorrow", "Next 10 days")
@@ -57,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             tab.text = abas[position]
         }.attach()
     }
-}
+
     // Função para pegar o horário local
     private fun getCurrentTime(): String {
         val calendar = Calendar.getInstance()
@@ -65,4 +59,4 @@ class MainActivity : AppCompatActivity() {
         val minute = calendar.get(Calendar.MINUTE)
         return String.format("%02d:%02d", hour, minute)
     }
-
+}
