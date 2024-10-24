@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.previsaodotempo.adapters.WeeklyAdapter
 import com.example.previsaodotempo.databinding.FragmentNextDaysBinding
 import com.example.previsaodotempo.viewmodel.WeatherViewModel
@@ -26,6 +27,13 @@ class NextDaysFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapter = WeeklyAdapter(emptyList(), emptyList(), emptyList())
+
+        binding.rvWeekly.adapter = adapter
+        binding.rvWeekly.layoutManager = LinearLayoutManager(context)
+
+        adapter = this@NextDaysFragment.adapter
+
 
         viewModel = ViewModelProvider(requireActivity()).get(WeatherViewModel::class.java)
 

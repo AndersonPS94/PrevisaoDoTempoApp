@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.previsaodotempo.adapters.HourlyAdapter
 import com.example.previsaodotempo.databinding.FragmentTodayBinding
 import com.example.previsaodotempo.viewmodel.WeatherViewModel
@@ -26,11 +27,16 @@ class TodayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapter = HourlyAdapter(emptyList(), emptyList())
+
+        binding.rvWeatherToday.adapter = adapter
+
+        binding.rvWeatherToday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        adapter = this@TodayFragment.adapter
 
         viewModel = ViewModelProvider(requireActivity()).get(WeatherViewModel::class.java)
 
-      /*  adapter = HourlyAdapter(emptyList())
-        binding.rvItemToday.adapter = adapter*/
+
 
         viewModel.todayWeather.observe(viewLifecycleOwner) { weather ->
             adapter.updateData(weather.time, weather.temperature_2m)

@@ -12,6 +12,8 @@ data class Hourly(
     val temperature_2m: List<Double>
 )
 
+
+
 data class Daily(
     val time: List<String>,
     val temperature_2m_min: List<Double>,

@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textDiaMesSemana" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textDescTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -72,28 +72,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textDescTemp"
         app:tabIndicatorColor="@color/white"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="@color/cinza">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/btnToday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Today" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/btnTomorrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tomorrow" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/btnNextDays"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next 10 days" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -127,7 +111,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tabLayoutInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textDescTemp"
         app:layout_constraintVertical_bias="0.62"
         app:srcCompat="@drawable/backgroundshapeitem" />
 
@@ -144,7 +128,7 @@
         app:srcCompat="@drawable/wind" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textVelVento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -164,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textVelVento" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -180,7 +164,7 @@
         app:srcCompat="@drawable/water" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textHumidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -190,7 +174,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.927"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textVelVento"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
@@ -204,10 +188,10 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textHumidade" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textProb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -217,7 +201,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.674"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textHumidade"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
@@ -230,7 +214,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textProb" />
 
     <ImageView
         android:id="@+id/imageView5"

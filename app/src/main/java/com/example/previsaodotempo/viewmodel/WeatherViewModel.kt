@@ -35,12 +35,14 @@ class WeatherViewModel : ViewModel() {
                 // Atualizando os dados para hoje, amanhã e os próximos 10 dias
                 _todayWeather.value = Hourly(
                     time = response.hourly.time.take(24),  // Pega as primeiras 24 horas
-                    temperature_2m = response.hourly.temperature_2m.take(24)
+                    temperature_2m = response.hourly.temperature_2m.take(24),
+
                 )
 
                 _tomorrowWeather.value = Hourly(
                     time = response.hourly.time.drop(24).take(24),  // Pega as próximas 24 horas
-                    temperature_2m = response.hourly.temperature_2m.drop(24).take(24)
+                    temperature_2m = response.hourly.temperature_2m.drop(24).take(24),
+
                 )
 
                 _weeklyWeather.value = response.daily
