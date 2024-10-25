@@ -1,7 +1,7 @@
 # Aplicativo para previsão do tempo - Devspace desafio Intermediario - Roque Buarque
 
 Esse projeto é um aplicativo Android Nativo desenvolvido com a linguagem de programação Kotlin
-<br><br>
+<br>
 - tem como principal funcionalidade:
 <br>
 - Exibir a previsão do tempo de São Paulo em tempo real
