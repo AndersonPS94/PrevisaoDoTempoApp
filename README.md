@@ -31,15 +31,24 @@ Aplicativo desenvolvido para o desafio do devspace intermediario
 - Activity
 - Intent
 - ViewBinding
+- LiveData
+- MVVM
+- Fragments
+- Adapters
 -----------------------------
 - ViewGroups
    - ConstraintLayout
    - RecyclerView
+   - Item para recyclerview
+   - ViewPager
+   - TabLayout
 -----------------------------     
 - Views
   - TextView
+  - ImageView
   - EditText
-  - Button
+  - Buttons
+  - Tab Buttons
 
 
 ## License
