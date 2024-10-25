@@ -53,6 +53,13 @@ Esse projeto é um aplicativo Android Nativo desenvolvido com a linguagem de pro
   - Tab Buttons
 
 
+## To-Do List:
+
+- [ ] Adicionar a condição a proxima Activity e gerar a lista do tempo dos proximos 10 dias
+- [ ] Implementar exibição de velocidade do vento, umidade e probabilidade de chuva
+- [ ] Criar ícones de condições climáticas e exibi-los corretamente junto a textView (ex: sol, chuva, nublado)
+
+
 ## License
 ```
 The MIT License (MIT)
