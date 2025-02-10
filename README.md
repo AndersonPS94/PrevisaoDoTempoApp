@@ -1,66 +1,71 @@
-# Aplicativo para previsão do tempo - Devspace desafio Intermediario - Roque Buarque
+# 📱 Previsão do tempo - Devspace desafio Intermediario
 
-Esse projeto é um aplicativo Android Nativo desenvolvido com a linguagem de programação Kotlin
-<br>
-- tem como principal funcionalidade:
-<br>
-- Exibir a previsão do tempo de São Paulo em tempo real
-<br>
-- Exibir a previsão do tempo no dia atual, no proximo dia e nos proximos 10 dias
-<br>
-- Exibir um icone da condição climatica atual
-<br>
-- Exibir as condições climaticas do dia atual
-<br><br>
+>tem como principal funcionalidade, exibir a previsão do tempo de São Paulo em tempo real
 
+---
 
-## :camera_flash: Screenshot
+## 📸 Demonstração  
 
 
 <img src="https://github.com/user-attachments/assets/118cdadc-7f63-4406-9169-fe7a9e045ffd" width="260">
 <img src="https://github.com/user-attachments/assets/a2182c47-f655-4ec9-826c-cc627c1e153e" width="260">
 
+---
 
+## 🛠️ Tecnologias Utilizadas  
+Este projeto foi desenvolvido com as seguintes tecnologias:  
 
+✅ **Kotlin**  
+✅ **MVVM**  
+✅ **Retrofit**  
+✅ **XML Layouts**  
+✅ **Open Meteo API**
 
+---
 
+## 📂 Estrutura do Projeto
+O código segue o padrão MVVM:
 
+📂 app  
+ ├── 📂 data  
+ │   ├── repository  
+ │   ├── models  
+ ├── 📂 ui  
+ │   ├── fragments  
+ │   ├── viewmodels  
+ ├── 📂 network  
+ │   ├── api  
 
+---
 
-## Tecnologias
-- API
-- Retrofit Service
-- Activity
-- Intent
-- ViewBinding
-- LiveData
-- MVVM
-- Fragments
-- Adapters
------------------------------
-- ViewGroups
-   - ConstraintLayout
-   - RecyclerView
-   - Item para recyclerview
-   - ViewPager
-   - TabLayout
------------------------------     
-- Views
-  - TextView
-  - ImageView
-  - EditText
-  - Buttons
-  - Tab Buttons
+## 📄 Aprendizados
+Durante o desenvolvimento deste projeto, aprendi sobre:
 
+✅ Consumo de APIs REST com Retrofit.
 
-## To-Do List:
+✅ Implementação do padrão MVVM.
 
-- [ ] Adicionar a condição a proxima Activity e gerar a lista do tempo dos proximos 10 dias
-- [ ] Implementar exibição de velocidade do vento, umidade e probabilidade de chuva
-- [ ] Criar ícones de condições climáticas e exibi-los corretamente junto a textView (ex: sol, chuva, nublado)
-- [ ] Corrigir a formatação da data e da hora nos fragments: Today e Tomorrow
+✅ Manipulação de LiveData e ViewModel.
 
-## License
+---
+
+## 🚀 Como Executar  
+
+Para rodar o projeto na sua máquina, siga estes passos:  
+
+```bash
+# Clone este repositório
+git clone https://github.com/AndersonPS94/PrevisaoDoTempoApp.git
+
+# Acesse a pasta do projeto no terminal
+cd PrevisaoDoTempoAp
+
+# Abra o projeto no Android Studio e execute no emulador ou dispositivo real.
+```
+
+---
+
+## 📜 Licença
 ```
 The MIT License (MIT)
 
