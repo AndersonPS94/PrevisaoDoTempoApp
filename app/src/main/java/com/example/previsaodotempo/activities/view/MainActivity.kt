@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun inicializarNavegacaoAbas() {  // Nome ajustado para camelCase
         val tabLayout = binding.tabLayoutInfo
-        val viewPager = binding.viewpagerPrincipal // camelCase
+        val viewPager = binding.viewpagerPrincipal
 
         // Lista de títulos das abas
         val abas = listOf("Today", "Tomorrow", "Next 10 days")

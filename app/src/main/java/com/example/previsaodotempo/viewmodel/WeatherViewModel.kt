@@ -30,6 +30,8 @@ class WeatherViewModel : ViewModel() {
                     hourly = "temperature_2m",
                     daily = "temperature_2m_min,temperature_2m_max",
                     timezone = "America/Sao_Paulo"
+
+
                 )
 
                 // Atualizando os dados para hoje, amanhã e os próximos 10 dias

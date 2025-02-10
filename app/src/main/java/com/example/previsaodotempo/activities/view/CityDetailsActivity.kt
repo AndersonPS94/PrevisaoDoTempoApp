@@ -67,4 +67,5 @@ class CityDetailsActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 }
