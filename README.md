@@ -21,7 +21,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ✅ **Retrofit**  
 ✅ **XML Layouts**  
 ✅ **Open Meteo API**      
-✅ **Injeção de dependência com o Hilt**
+✅ **Injeção de dependências com o Hilt**
 ---
 
 ## 📂 Estrutura do Projeto
@@ -64,11 +64,10 @@ O código segue o padrão MVVM:
 ## 📄 Aprendizados
 Durante o desenvolvimento deste projeto, aprendi sobre:
 
-✅ Consumo de APIs REST com Retrofit.
-
-✅ Implementação do padrão MVVM.
-
-✅ Manipulação de LiveData e ViewModel.
+✅ Consumo de APIs REST com Retrofit.        
+✅ Implementação do padrão MVVM.        
+✅ Manipulação de LiveData e ViewModel.        
+✅ Injeção de dependências com Hilt.      
 
 ---
 
