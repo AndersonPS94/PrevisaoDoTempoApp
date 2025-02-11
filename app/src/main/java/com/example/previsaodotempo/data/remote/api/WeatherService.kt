@@ -1,6 +1,6 @@
 package com.example.previsaodotempo.data.remote.api
 
-import com.example.previsaodotempo.domain.model.WeatherResponse
+import WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

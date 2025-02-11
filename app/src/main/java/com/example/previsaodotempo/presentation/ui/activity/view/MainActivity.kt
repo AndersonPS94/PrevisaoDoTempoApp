@@ -1,5 +1,6 @@
 package com.example.previsaodotempo.presentation.ui.activity.view
 
+import WeatherViewModel
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.previsaodotempo.presentation.ui.adapters.ViewPagerAdapter
 import com.example.previsaodotempo.databinding.ActivityMainBinding
-import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar

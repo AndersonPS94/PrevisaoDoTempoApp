@@ -1,8 +1,4 @@
-package com.example.previsaodotempo.domain.model
-
 import com.google.gson.annotations.SerializedName
-
-// Modelo de dados baseado na resposta da API
 
 data class WeatherResponse(
     @SerializedName("hourly") val hourly: HourlyData,
@@ -10,14 +6,16 @@ data class WeatherResponse(
 )
 
 data class HourlyData(
+    @SerializedName("time") val time: List<String>, // Adicionando os horários
     @SerializedName("temperature_2m") val temperatures: List<Double>,
     @SerializedName("wind_speed_10m") val windSpeeds: List<Double>,
     @SerializedName("relative_humidity_2m") val humidityLevels: List<Double>,
     @SerializedName("precipitation_probability") val precipitationProbability: List<Double>,
-    @SerializedName("weather_code") val weatherCodes: List<Int>
+    @SerializedName("weathercode") val weatherCodes: List<Int> // Corrigindo nome
 )
 
 data class DailyData(
+    @SerializedName("time") val time: List<String>, // Adicionando as datas
     @SerializedName("temperature_2m_max") val maxTemperatures: List<Double>,
     @SerializedName("temperature_2m_min") val minTemperatures: List<Double>
 )

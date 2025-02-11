@@ -1,6 +1,6 @@
 package com.example.previsaodotempo.data.remote.repository
 
-import com.example.previsaodotempo.domain.model.WeatherResponse
+import WeatherResponse
 import com.example.previsaodotempo.data.remote.api.WeatherService
 import javax.inject.Inject
 import javax.inject.Singleton
