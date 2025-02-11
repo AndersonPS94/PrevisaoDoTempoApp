@@ -1,7 +1,6 @@
 package com.example.previsaodotempo.data.remote.repository
 
-import android.widget.Toast
-import com.example.previsaodotempo.data.remote.api.WeatherResponse
+import com.example.previsaodotempo.domain.model.WeatherResponse
 import com.example.previsaodotempo.data.remote.api.WeatherService
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.previsaodotempo.data.remote.api.WeatherResponse
+import com.example.previsaodotempo.domain.model.WeatherResponse
 import com.example.previsaodotempo.data.remote.repository.IWeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

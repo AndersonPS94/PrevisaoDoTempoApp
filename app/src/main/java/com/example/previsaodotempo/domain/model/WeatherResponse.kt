@@ -1,4 +1,4 @@
-package com.example.previsaodotempo.data.remote.api
+package com.example.previsaodotempo.domain.model
 
 import com.google.gson.annotations.SerializedName
 
