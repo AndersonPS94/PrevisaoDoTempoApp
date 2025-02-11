@@ -1,8 +1,9 @@
-package com.example.previsaodotempo.adapters
+package com.example.previsaodotempo.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.previsaodotempo.data.remote.api.DailyData
 import com.example.previsaodotempo.databinding.ItemTodayNextdaysBinding
 
 class WeeklyAdapter(
@@ -40,6 +41,5 @@ class WeeklyAdapter(
         dateList = newDateList
         minTempList = newMinTempList
         maxTempList = newMaxTempList
-        notifyDataSetChanged()
     }
 }

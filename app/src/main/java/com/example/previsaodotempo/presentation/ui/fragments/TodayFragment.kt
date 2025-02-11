@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.previsaodotempo.adapters.HourlyAdapter
 import com.example.previsaodotempo.databinding.FragmentTodayBinding
-import com.example.previsaodotempo.viewmodel.WeatherViewModel
+import com.example.previsaodotempo.presentation.ui.adapters.HourlyAdapter
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TodayFragment : Fragment() {
 
     private lateinit var viewModel: WeatherViewModel
@@ -42,6 +44,6 @@ class TodayFragment : Fragment() {
             adapter.updateData(weather.time, weather.temperature_2m)
         }
 
-        viewModel.fetchWeatherData()
+        viewModel.fetchWeatherData( 52.5200, 13.4050)
     }
-}
+}}

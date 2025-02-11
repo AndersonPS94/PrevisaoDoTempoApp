@@ -1,20 +1,22 @@
-package com.example.previsaodotempo.activities.view
+package com.example.previsaodotempo.presentation.ui.activity.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.previsaodotempo.adapters.ViewPagerAdapter
+import com.example.previsaodotempo.presentation.ui.adapters.ViewPagerAdapter
 import com.example.previsaodotempo.databinding.ActivityMainBinding
-import com.example.previsaodotempo.viewmodel.WeatherViewModel
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: WeatherViewModel
+    private val viewModel: WeatherViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +24,11 @@ class MainActivity : AppCompatActivity() {
         // Inicializando o ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         inicializarNavegacaoAbas()
         recuperarDados()
-        enableEdgeToEdge()
         iniciarNovaAct()
+
     }
 
     private fun iniciarNovaAct() {
@@ -40,22 +43,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun recuperarDados() {
-        // Configurando o ViewModel
-        viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
-        // Observando o estado da previsão do tempo
-        viewModel.todayWeather.observe(this) {
-            // Atualizando a cidade, temperatura e hora
-            binding.textNomeCidade.text = "São Paulo"  // Cidade fixa
-            // Temperatura atualizada de acordo com a API
-            binding.textTemperaturaAtual.text = "${it.temperature_2m[0]}º"
-            // Atualizando o horário em tempo real
+        // Observar os dados do ViewModel e atualizar a UI
+        viewModel.weatherData.observe(this) { weather ->
+            val temp = weather.hourly.temperatures[0]
+            val windSpeed = weather.hourly.windSpeeds[0]
+            val humidity = weather.hourly.humidityLevels[0]
+            val weatherCode = weather.hourly.weatherCodes[0]
+            val weatherDescription = viewModel.getWeatherDescription(weatherCode)
+
+            // Atualizar a UI com os dados
+            binding.textTemperaturaAtual.text = "$temp°"
+            binding.textVelVento.text = "$windSpeed km/h"
+            binding.textHumidade.text = "$humidity%"
+            binding.textDescTemp.text = "$weatherDescription"
+            binding.textNomeCidade.text = "São Paulo"
             binding.textDiaMesSemana.text = getCurrentTime()
-
-
         }
+
+        // Buscar clima para São Paulo (-23.5505, -46.6333)
+        viewModel.fetchWeather(-23.5505, -46.6333)
+
     }
 
-    private fun inicializarNavegacaoAbas() {  // Nome ajustado para camelCase
+    private fun inicializarNavegacaoAbas() {
         val tabLayout = binding.tabLayoutInfo
         val viewPager = binding.viewpagerPrincipal
 

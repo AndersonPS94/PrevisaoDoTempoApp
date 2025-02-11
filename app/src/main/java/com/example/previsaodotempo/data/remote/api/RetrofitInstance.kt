@@ -1,4 +1,4 @@
-package com.example.previsaodotempo.api
+package com.example.previsaodotempo.data.remote.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

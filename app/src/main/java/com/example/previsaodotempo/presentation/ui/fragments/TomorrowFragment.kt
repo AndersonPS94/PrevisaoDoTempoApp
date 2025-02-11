@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.previsaodotempo.adapters.HourlyAdapter
 import com.example.previsaodotempo.databinding.FragmentTomorrowBinding
-import com.example.previsaodotempo.viewmodel.WeatherViewModel
-import java.util.Calendar
+import com.example.previsaodotempo.presentation.ui.adapters.HourlyAdapter
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class TomorrowFragment : Fragment() {
 
     private lateinit var viewModel: WeatherViewModel
@@ -46,4 +48,3 @@ class TomorrowFragment : Fragment() {
 
 
 }
-

@@ -1,4 +1,4 @@
-package com.example.previsaodotempo.adapters
+package com.example.previsaodotempo.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -26,6 +26,7 @@ class HourlyAdapter(private var timeList: List<String>, private var tempList: Li
     override fun onBindViewHolder(holder: HourlyViewHolder, position: Int) {
         holder.bind(timeList[position], tempList[position])
     }
+
 
     fun updateData(newTimeList: List<String>, newTempList: List<Double>) {
         timeList = newTimeList

@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.previsaodotempo.adapters.WeeklyAdapter
 import com.example.previsaodotempo.databinding.FragmentNextDaysBinding
-import com.example.previsaodotempo.viewmodel.WeatherViewModel
+import com.example.previsaodotempo.presentation.ui.adapters.WeeklyAdapter
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NextDaysFragment : Fragment() {
 
     private lateinit var viewModel: WeatherViewModel
