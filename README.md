@@ -20,24 +20,46 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ✅ **MVVM**  
 ✅ **Retrofit**  
 ✅ **XML Layouts**  
-✅ **Open Meteo API**
-
+✅ **Open Meteo API**      
+✅ **Injeção de dependência com o Hilt**
 ---
 
 ## 📂 Estrutura do Projeto
 O código segue o padrão MVVM:
 
-📂 app  
- ├── 📂 data  
- │   ├── repository  
- │   ├── models  
- ├── 📂 ui  
- │   ├── fragments  
- │   ├── viewmodels  
- ├── 📂 network  
- │   ├── api  
+```plaintext
+📂 app                   
+├── 📂 data             
+│   ├── 📂 Remote                        
+│   │   ├── 📂 api                 
+│   │   │   ├── RetrofitInstance.kt                                  
+│   │   │   ├── WeatherService.kt                               
+│   │   ├── 📂 repository                     
+│   │   │   ├── IWeatherRepository.kt                 
+│   │   │   ├── WeatherRepositoryImpl.kt                
+│   ├── 📂 di                    
+│   │   ├── AppModule.kt                 
+│   │   ├── BaseApplication.kt              
+├── 📂 domain                
+│   ├── 📂 model                
+│   │   ├── WeatherResponse.kt          
+├── 📂 presentation
+│   ├── 📂 ui
+│   │   ├── 📂 activity/view
+│   │   │   ├── CityDetailsActivity.kt
+│   │   │   ├── MainActivity.kt
+│   │   ├── 📂 adapters 
+│   │   │   ├── HourlyAdapter.kt
+│   │   │   ├── ViewPagerAdapter.kt
+│   │   │   ├── WeeklyAdapter.kt
+│   │   ├── 📂 fragments 
+│   │   │   ├── NextDaysFragment.kt
+│   │   │   ├── TodayFragment.kt
+│   │   │   ├── TomorrowFragment.kt
+│   ├── 📂 viewmodel
+│   │   ├── WeatherViewModel.kt
+```
 
----
 
 ## 📄 Aprendizados
 Durante o desenvolvimento deste projeto, aprendi sobre:
@@ -59,7 +81,7 @@ Para rodar o projeto na sua máquina, siga estes passos:
 git clone https://github.com/AndersonPS94/PrevisaoDoTempoApp.git
 
 # Acesse a pasta do projeto no terminal
-cd PrevisaoDoTempoAp
+cd PrevisaoDoTempoApp
 
 # Abra o projeto no Android Studio e execute no emulador ou dispositivo real.
 ```
