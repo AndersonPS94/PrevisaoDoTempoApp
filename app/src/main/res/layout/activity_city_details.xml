@@ -5,198 +5,185 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
     android:background="@color/Preto_background"
     tools:context=".presentation.ui.activity.view.CityDetailsActivity">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView2"
-        android:layout_width="388dp"
-        android:layout_height="129dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCondClimatica"
-        app:srcCompat="@drawable/backgroundshapeitem" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="64dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.341"
-        app:srcCompat="@drawable/wind" />
-
-    <TextView
-        android:id="@+id/textVelVento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:text="10 m/s"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginBottom="6dp"
-        android:text="Wind"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="65dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:srcCompat="@drawable/water" />
-
-    <TextView
-        android:id="@+id/textHumidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="98%"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/textVelVento"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/textVelVento"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Humidity"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textHumidade"
-        app:layout_constraintStart_toStartOf="@+id/textHumidade"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textProb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="100%"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/textHumidade" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="Rain"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="52dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:srcCompat="@drawable/kid" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="49dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backgroundshapeitem" />
-
-    <ImageButton
-        android:id="@+id/itemBtn"
-        android:layout_width="46dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/Preto_background_secundario"
-        android:src="@drawable/category_24"
-        android:tint="@color/cinza"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7" />
-
-    <TextView
-        android:id="@+id/textNomeCidade2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Stuttgart"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold" />
-
-
-    <ImageButton
-        android:id="@+id/btnVoltar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/forma_arredondada"
-        android:foregroundGravity="center"
-        android:src="@drawable/back_button_24"
-        app:tint="@color/white"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="61dp" />
-
-    <TextView
-        android:id="@+id/textTempAtual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="20º"
-        android:textColor="@color/white"
-        android:textSize="96sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNomeCidade2" />
-
-    <TextView
-        android:id="@+id/textCondClimatica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Thunderstorm"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTempAtual" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvNextDays"
-        android:layout_width="452dp"
-        android:layout_height="523dp"
-        android:layout_marginTop="16dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_margin="16dp"
+                android:background="@drawable/forma_arredondada"
+                android:src="@drawable/back_button_24"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textNomeCidade2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="70dp"
+                android:foregroundGravity="center"
+                android:text="Stuttgart"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/itemBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="90dp"
+                android:background="@drawable/forma_arredondada"
+                android:src="@drawable/category_24"
+                android:tint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textTempAtual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20º"
+                    android:textColor="@color/white"
+                    android:textSize="96sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textCondClimatica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thunderstorm"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNextDays"
+        android:layout_width="450dp"
+        android:layout_height="463dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/item_today_nextdays" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/rvNextDays"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/textVelVento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 m/s"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wind"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/textHumidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="98%"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/textProb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rain"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

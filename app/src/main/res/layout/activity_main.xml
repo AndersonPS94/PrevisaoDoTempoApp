@@ -202,7 +202,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.674"
         app:layout_constraintStart_toEndOf="@+id/textHumidade"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMenino" />
 
     <TextView
         android:id="@+id/textView7"
@@ -217,7 +217,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textProb" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageMenino"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
