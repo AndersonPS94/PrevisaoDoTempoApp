@@ -12,25 +12,30 @@ import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
+
+// MainActivity.kt
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    // Variáveis para ViewBinding e ViewModel
     private lateinit var binding: ActivityMainBinding
     private val viewModel: WeatherViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inicializando o ViewBinding
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        // Inicializando funções e configurações
         inicializarNavegacaoAbas()
         recuperarDados()
         iniciarNovaAct()
 
     }
 
+    // Função para iniciar a nova Activity -> detalhes da cidade
     private fun iniciarNovaAct() {
         binding.textNomeCidade.setOnClickListener {
             intent = Intent(this, CityDetailsActivity::class.java)
@@ -42,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Função para recuperar dados do clima
     private fun recuperarDados() {
         viewModel.weatherData.observe(this) { weather ->
             if (weather == null || weather.hourly == null) {
@@ -49,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                 return@observe
             }
 
+            // Extraindo informações do clima
             val temp = weather.hourly.temperatures?.firstOrNull() ?: 0.0
             val windSpeed = weather.hourly.windSpeeds?.firstOrNull() ?: 0.0
             val humidity = weather.hourly.humidityLevels?.firstOrNull() ?: 0.0
@@ -74,6 +81,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    // Função para inicializar a navegação das abas
     private fun inicializarNavegacaoAbas() {
         val tabLayout = binding.tabLayoutInfo
         val viewPager = binding.viewpagerPrincipal
@@ -96,6 +104,7 @@ class MainActivity : AppCompatActivity() {
         val dayOfWeek = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, java.util.Locale.getDefault())
 
 
+        // Formatando a string de data
         return String.format("%s, %d %s", dayOfWeek, date, month)
     }
 }

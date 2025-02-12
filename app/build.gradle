@@ -41,6 +41,18 @@ android {
 
 dependencies {
 
+    // JUnit para testes unitários
+    testImplementation libs.junit
+
+    // Mockk para criar mocks e simular dependências
+    testImplementation libs.mockk
+
+    // Coroutines Test para testar funções suspensas
+    testImplementation libs.kotlinx.coroutines.test
+
+    // LiveData Test (necessário para testar ViewModel)
+    testImplementation libs.androidx.core.testing
+
     // ViewModel
     implementation libs.androidx.lifecycle.viewmodel.ktx
     // LiveData

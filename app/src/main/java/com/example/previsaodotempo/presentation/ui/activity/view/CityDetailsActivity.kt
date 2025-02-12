@@ -14,8 +14,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
+//
 class CityDetailsActivity : AppCompatActivity() {
 
+    // Variáveis de ligação e ViewModel para a atividade de detalhes da cidade usando View Binding e Hilt.
     private lateinit var binding: ActivityCityDetailsBinding
     private lateinit var adapter: WeeklyAdapter
     private val viewModel: WeatherViewModel by viewModels()
@@ -25,18 +27,22 @@ class CityDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         enableEdgeToEdge()
+
         eventoClique()
+
 
         configurarListaProxDias()
         recuperarCidadeDados()
     }
 
+    // Configurando o RecyclerView para exibir os dados dos próximos dias
     private fun configurarListaProxDias() {
         // Inicializando o adapter com listas vazias
         adapter = WeeklyAdapter()
         binding.rvNextDays.adapter = adapter
         binding.rvNextDays.layoutManager = LinearLayoutManager(this)
 
+        // Observando os dados do clima para os próximos dias
         viewModel.weatherData.observe(this) { weather ->
             if (weather == null || weather.daily == null) {
                 Log.e("CityDetailsActivity", "Dados do clima para os próximos dias estão nulos!")
@@ -55,6 +61,7 @@ class CityDetailsActivity : AppCompatActivity() {
 
 
 
+    // Recuperando dados do clima para a cidade de São Paulo
     private fun recuperarCidadeDados() {
         viewModel.weatherData.observe(this) { weather ->
             if (weather == null || weather.daily == null) {
@@ -62,6 +69,7 @@ class CityDetailsActivity : AppCompatActivity() {
                 return@observe
             }
 
+            // Pegando os dados de temperatura, velocidade do vento, humidade e probabilidade de chuva
             val temp = weather.hourly?.temperatures?.firstOrNull() ?: 0.0
             val windSpeed = weather.hourly?.windSpeeds?.firstOrNull() ?: 0.0
             val humidity = weather.hourly?.humidityLevels?.firstOrNull() ?: 0.0
@@ -69,6 +77,7 @@ class CityDetailsActivity : AppCompatActivity() {
             val weatherCode = weather.hourly?.weatherCodes?.firstOrNull() ?: 0
             val weatherDescription = viewModel.getWeatherDescription(weatherCode)
 
+            // Atualizando a UI com os dados
             binding.textTempAtual.text = "$temp°C"
             binding.textVelVento.text = "$windSpeed km/h"
             binding.textHumidade.text = "$humidity%"

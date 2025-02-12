@@ -14,11 +14,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
+// Classe de ViewModel para a tela principal
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val repository: IWeatherRepository
 ) : ViewModel() {
 
+    // LiveData para os dados do clima
     private val _weatherData = MutableLiveData<WeatherResponse>()
     val weatherData: LiveData<WeatherResponse> get() = _weatherData
 
@@ -31,6 +34,7 @@ class WeatherViewModel @Inject constructor(
     private val _weeklyWeather = MutableLiveData<DailyData>()
     val weeklyWeather: LiveData<DailyData> get() = _weeklyWeather
 
+    // Função para buscar os dados do clima
     fun fetchWeather(lat: Double, lon: Double) {
         viewModelScope.launch {
             try {
@@ -52,6 +56,7 @@ class WeatherViewModel @Inject constructor(
         }
     }
 
+    // Função para filtrar os dados para hoje
     private fun filterTodayWeather(hourlyData: HourlyData): HourlyData {
         return HourlyData(
             time = hourlyData.time?.take(10) ?: emptyList(),
@@ -63,6 +68,7 @@ class WeatherViewModel @Inject constructor(
         )
     }
 
+    // Função para filtrar os dados para o dia seguinte
     private fun filterTomorrowWeather(hourlyData: HourlyData): HourlyData {
         return HourlyData(
             time = hourlyData.time?.drop(24)?.take(24) ?: emptyList(),
@@ -73,22 +79,24 @@ class WeatherViewModel @Inject constructor(
             weatherCodes = hourlyData.weatherCodes?.drop(24)?.take(24) ?: emptyList()
         )
     }
-
+    // Função para obter a descrição do clima com base no código
     fun getWeatherDescription(code: Int,): String {
         return when (code) {
-            0 -> "Ensolarado"
-            1, 2, 3 -> "Parcialmente Nublado"
-            45, 48 -> "Neblina"
-            51, 53, 55 -> "Garoa"
-            61, 63, 65 -> "Chuva"
-            71, 73, 75 -> "Neve"
-            95, 96, 99 -> "Tempestade"
-            else -> "Desconhecido"
+            0 -> "Sunny"
+            1, 2, 3 -> "Partly Cloudy"
+            45,48 -> "Fog"
+            51, 53, 55 -> "Drizzle"
+            61, 63, 65 -> "Rain"
+            71, 73, 75 -> "Snow"
+            95, 96,99 -> "Thunderstorm"
+            else -> "Unknown"
         }
     }
+
+    // Função para obter o ícone de acordo com o código do clima
     fun getWeatherIcon(code: Int): Int {
         return when (code) {
-            0 -> R.drawable.sun // Ícone para "Ensolarado"
+            0 -> R.drawable.ensolarado // Ícone para "Ensolarado"
             1, 2, 3 -> R.drawable.nebuloso // Ícone para "Parcialmente Nublado"
             45, 48 -> R.drawable.nebuloso // Ícone para "Neblina"
             51, 53, 55 -> R.drawable.cloudy // Ícone para "Garoa"

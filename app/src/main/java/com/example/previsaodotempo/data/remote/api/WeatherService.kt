@@ -4,6 +4,7 @@ import WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+// Interface para a API de previsão do tempo
 interface WeatherService {
     @GET("forecast")
     suspend fun getWeatherData(

@@ -35,6 +35,7 @@ class HourlyAdapter(
         }
     }
 
+    // Função para atualizar os dados do adapter
     fun updateData(newTimeList: List<String>?, newTempList: List<Double>?) {
         timeList = newTimeList ?: emptyList()
         tempList = newTempList ?: emptyList()

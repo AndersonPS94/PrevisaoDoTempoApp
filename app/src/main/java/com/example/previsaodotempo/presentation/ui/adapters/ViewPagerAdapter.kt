@@ -9,6 +9,9 @@ import com.example.previsaodotempo.presentation.ui.fragments.TodayFragment
 import com.example.previsaodotempo.presentation.ui.fragments.TomorrowFragment
 
 
+;
+
+// Classe para o ViewPager
 class ViewPagerAdapter (
     val abas: List<String>,
     fragmentManager: FragmentManager,

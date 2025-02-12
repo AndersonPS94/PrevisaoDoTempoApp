@@ -14,6 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class TomorrowFragment : Fragment() {
+
+    // Variáveis de ligação e ViewModel para a fragment de amanhã usando View Binding e Hilt.
     private lateinit var viewModel: WeatherViewModel
     private var _binding: FragmentTomorrowBinding? = null
     private val binding get() = _binding!!
@@ -27,11 +29,13 @@ class TomorrowFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Inicializando o ViewModel e o adapter para a lista de previsões de amanhã.
         viewModel = ViewModelProvider(requireActivity()).get(WeatherViewModel::class.java)
         adapter = HourlyAdapter(emptyList(), emptyList())
         binding.rvWeatherTomorrow.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvWeatherTomorrow.adapter = adapter
 
+        // Observando os dados de previsão de amanhã e atualizando a lista no adapter.
         viewModel.tomorrowWeather.observe(viewLifecycleOwner) { hourly ->
             adapter.updateData(hourly.time, hourly.temperatures)
         }

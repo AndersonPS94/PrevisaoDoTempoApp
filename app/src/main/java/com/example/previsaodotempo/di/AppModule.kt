@@ -12,10 +12,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+// Módulo para a injeção de dependência usando Hilt
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    // Fornece uma instância única do Retrofit
     @Provides
     @Singleton
     fun provideRetrofit(): Retrofit {
@@ -25,12 +27,14 @@ object AppModule {
             .build()
     }
 
+    // Fornece uma instância única do WeatherService
     @Provides
     @Singleton
     fun provideWeatherApiService(retrofit: Retrofit): WeatherService {
         return retrofit.create(WeatherService::class.java)
     }
 
+    // Fornece uma instância única do WeatherRepository
     @Provides
     @Singleton
     fun provideWeatherRepository(api: WeatherService): IWeatherRepository {
