@@ -6,20 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.previsaodotempo.databinding.ItemTodayNextdaysBinding
 
 class WeeklyAdapter(
-    private var dateList: List<String>,
-    private var minTempList: List<Double>,
-    private var maxTempList: List<Double>
+    private var dateList: List<String> = emptyList(),
+    private var minTempList: List<Double> = emptyList(),
+    private var maxTempList: List<Double> = emptyList()
 ) : RecyclerView.Adapter<WeeklyAdapter.WeeklyViewHolder>() {
 
-    inner class WeeklyViewHolder(
-        private val binding: ItemTodayNextdaysBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(date: String, minTemp: Double, maxTemp: Double) {
-            // Vincule os dados aos elementos de UI aqui
-            binding.textDayWeek.text = date
-            binding.textMin.text = "$minTemp°C"
-            binding.textMax.text = "$maxTemp°C"
+    inner class WeeklyViewHolder(private val binding: ItemTodayNextdaysBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(date: String?, minTemp: Double?, maxTemp: Double?) {
+            binding.textDayWeek.text = date ?: "-" // Evita crash se for nulo
+            binding.textMin.text = minTemp?.let { "$it°C" } ?: "N/A°C"
+            binding.textMax.text = maxTemp?.let { "$it°C" } ?: "N/A°C"
         }
     }
 
@@ -29,16 +26,24 @@ class WeeklyAdapter(
         return WeeklyViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = dateList.size
+    override fun getItemCount(): Int =
+        dateList.size.coerceAtMost(minTempList.size).coerceAtMost(maxTempList.size)
 
     override fun onBindViewHolder(holder: WeeklyViewHolder, position: Int) {
-        holder.bind(dateList[position], minTempList[position], maxTempList[position])
+        if (position < dateList.size && position < minTempList.size && position < maxTempList.size) {
+            holder.bind(dateList[position], minTempList[position], maxTempList[position])
+        } else {
+            holder.bind("-", null, null)
+        }
     }
 
-    // Função para atualizar os dados do adaptador
-    fun updateData(newDateList: List<String>, newMinTempList: List<Double>, newMaxTempList: List<Double>) {
-        dateList = newDateList
-        minTempList = newMinTempList
-        maxTempList = newMaxTempList
+    fun updateData(newDateList: List<String>?, newMinTempList: List<Double>?, newMaxTempList: List<Double>?) {
+        // Atualizando os dados no adapter
+        dateList = newDateList ?: emptyList()
+        minTempList = newMinTempList ?: emptyList()
+        maxTempList = newMaxTempList ?: emptyList()
+
+        // Notificando o adapter para atualizar a UI
+        notifyDataSetChanged()
     }
 }

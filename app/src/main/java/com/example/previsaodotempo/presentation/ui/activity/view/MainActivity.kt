@@ -1,14 +1,14 @@
 package com.example.previsaodotempo.presentation.ui.activity.view
 
-import WeatherViewModel
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.example.previsaodotempo.presentation.ui.adapters.ViewPagerAdapter
 import com.example.previsaodotempo.databinding.ActivityMainBinding
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
@@ -43,27 +43,32 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun recuperarDados() {
-        // Observar os dados do ViewModel e atualizar a UI
         viewModel.weatherData.observe(this) { weather ->
-            val temp = weather.hourly.temperatures[0]
-            val windSpeed = weather.hourly.windSpeeds[0]
-            val humidity = weather.hourly.humidityLevels[0]
-            val weatherCode = weather.hourly.weatherCodes[0]
+            if (weather == null || weather.hourly == null) {
+                Log.e("MainActivity", "Dados do clima estão nulos!")
+                return@observe
+            }
+
+            val temp = weather.hourly.temperatures?.firstOrNull() ?: 0.0
+            val windSpeed = weather.hourly.windSpeeds?.firstOrNull() ?: 0.0
+            val humidity = weather.hourly.humidityLevels?.firstOrNull() ?: 0.0
+            val weatherCode = weather.hourly.weatherCodes?.firstOrNull() ?: 0
             val weatherDescription = viewModel.getWeatherDescription(weatherCode)
 
-            // Atualizar a UI com os dados
+            // Atualiza a UI
             binding.textTemperaturaAtual.text = "$temp°"
             binding.textVelVento.text = "$windSpeed km/h"
             binding.textHumidade.text = "$humidity%"
-            binding.textDescTemp.text = "$weatherDescription"
+            binding.textDescTemp.text = weatherDescription
             binding.textNomeCidade.text = "São Paulo"
             binding.textDiaMesSemana.text = getCurrentTime()
         }
 
         // Buscar clima para São Paulo (-23.5505, -46.6333)
         viewModel.fetchWeather(-23.5505, -46.6333)
-
     }
+
+
 
     private fun inicializarNavegacaoAbas() {
         val tabLayout = binding.tabLayoutInfo

@@ -6,10 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Preto_background"
-    android:backgroundTint="@color/Preto_background"
     tools:context=".presentation.ui.activity.view.CityDetailsActivity">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView2"
         android:layout_width="388dp"
         android:layout_height="129dp"
@@ -150,32 +149,19 @@
         android:text="Stuttgart"
         android:textColor="@color/white"
         android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backgroundshapeitem" />
 
     <ImageButton
         android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/Preto_background_secundario"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/forma_arredondada"
+        android:foregroundGravity="center"
         android:src="@drawable/back_button_24"
-        android:tint="@color/cinza"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+        app:tint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="61dp" />
 
     <TextView
         android:id="@+id/textTempAtual"
@@ -203,12 +189,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNextDays"
-        android:layout_width="395dp"
-        android:layout_height="262dp"
+        android:layout_width="452dp"
+        android:layout_height="523dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:listitem="@layout/item_today_nextdays" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

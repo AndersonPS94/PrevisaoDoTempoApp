@@ -1,6 +1,6 @@
-package com.example.previsaodotempo.fragments
+package com.example.previsaodotempo.presentation.ui.fragments
 
-import WeatherViewModel
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

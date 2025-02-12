@@ -1,6 +1,5 @@
-package com.example.previsaodotempo.fragments
+package com.example.previsaodotempo.presentation.ui.fragments
 
-import WeatherViewModel
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.previsaodotempo.databinding.FragmentTodayBinding
 import com.example.previsaodotempo.presentation.ui.adapters.HourlyAdapter
+import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,8 +32,8 @@ class TodayFragment : Fragment() {
         binding.rvWeatherToday.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvWeatherToday.adapter = adapter
 
-        viewModel.todayWeather.observe(viewLifecycleOwner) { weather ->
-            adapter.updateData(weather.time, weather.temperatures)
+        viewModel.todayWeather.observe(viewLifecycleOwner) { hourly ->
+            adapter.updateData(hourly.time, hourly.temperatures)
         }
     }
 
