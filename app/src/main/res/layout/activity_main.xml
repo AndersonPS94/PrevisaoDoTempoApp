@@ -191,13 +191,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textHumidade" />
 
     <TextView
-        android:id="@+id/textProb"
+        android:id="@+id/textProbabilidadeChuva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:text="100%"
+        android:text="0%"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.674"
@@ -214,7 +214,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textProb" />
+        app:layout_constraintTop_toBottomOf="@+id/textProbabilidadeChuva" />
 
     <ImageView
         android:id="@+id/imageMenino"

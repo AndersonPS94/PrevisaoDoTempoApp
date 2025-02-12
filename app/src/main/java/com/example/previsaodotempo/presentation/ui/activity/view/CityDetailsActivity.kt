@@ -65,12 +65,14 @@ class CityDetailsActivity : AppCompatActivity() {
             val temp = weather.hourly?.temperatures?.firstOrNull() ?: 0.0
             val windSpeed = weather.hourly?.windSpeeds?.firstOrNull() ?: 0.0
             val humidity = weather.hourly?.humidityLevels?.firstOrNull() ?: 0.0
+            val probability = weather.hourly?.precipitationProbability?.firstOrNull() ?: 0.0
             val weatherCode = weather.hourly?.weatherCodes?.firstOrNull() ?: 0
             val weatherDescription = viewModel.getWeatherDescription(weatherCode)
 
             binding.textTempAtual.text = "$temp°C"
             binding.textVelVento.text = "$windSpeed km/h"
             binding.textHumidade.text = "$humidity%"
+            binding.textProbabilidadeChuva.text = "$probability%"
             binding.textCondClimatica.text = "$weatherDescription"
             binding.textNomeCidade2.text = "São Paulo"
 

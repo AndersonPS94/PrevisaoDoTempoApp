@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             val temp = weather.hourly.temperatures?.firstOrNull() ?: 0.0
             val windSpeed = weather.hourly.windSpeeds?.firstOrNull() ?: 0.0
             val humidity = weather.hourly.humidityLevels?.firstOrNull() ?: 0.0
+            val probability = weather.hourly.precipitationProbability?.firstOrNull() ?: 0.0
             val weatherCode = weather.hourly.weatherCodes?.firstOrNull() ?: 0
             val weatherDescription = viewModel.getWeatherDescription(weatherCode)
             val weatherIcon = viewModel.getWeatherIcon(weatherCode)
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             binding.textTemperaturaAtual.text = "$temp°"
             binding.textVelVento.text = "$windSpeed km/h"
             binding.textHumidade.text = "$humidity%"
+            binding.textProbabilidadeChuva.text = "$probability%"
             binding.textDescTemp.text = weatherDescription
             binding.textNomeCidade.text = "São Paulo"
             binding.textDiaMesSemana.text = getCurrentTime()
