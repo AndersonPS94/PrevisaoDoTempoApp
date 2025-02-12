@@ -85,7 +85,6 @@ cd PrevisaoDoTempoApp
 # Abra o projeto no Android Studio e execute no emulador ou dispositivo real.
 ```
 
----
 
 ## 📜 Licença
 ```
