@@ -12,8 +12,9 @@ class HourlyAdapter(
 
     inner class HourlyViewHolder(private val binding: ItemListTodayBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(time: String?, temp: Double?) {
-            binding.textTime.text = time ?: "-" // Evita crash se for nulo
+            binding.textTime.text = time ?: "-"
             binding.textTemperatura.text = temp?.let { "$it°C" } ?: "N/A°C"
         }
     }

@@ -12,7 +12,6 @@ import com.example.previsaodotempo.presentation.ui.adapters.HourlyAdapter
 import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class TomorrowFragment : Fragment() {
     private lateinit var viewModel: WeatherViewModel
@@ -33,8 +32,8 @@ class TomorrowFragment : Fragment() {
         binding.rvWeatherTomorrow.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvWeatherTomorrow.adapter = adapter
 
-        viewModel.tomorrowWeather.observe(viewLifecycleOwner) { weather ->
-            adapter.updateData(weather.time, weather.temperatures)
+        viewModel.tomorrowWeather.observe(viewLifecycleOwner) { hourly ->
+            adapter.updateData(hourly.time, hourly.temperatures)
         }
     }
 

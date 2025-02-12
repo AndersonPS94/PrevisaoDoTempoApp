@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             val humidity = weather.hourly.humidityLevels?.firstOrNull() ?: 0.0
             val weatherCode = weather.hourly.weatherCodes?.firstOrNull() ?: 0
             val weatherDescription = viewModel.getWeatherDescription(weatherCode)
+            val weatherIcon = viewModel.getWeatherIcon(weatherCode)
 
             // Atualiza a UI
             binding.textTemperaturaAtual.text = "$temp°"
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             binding.textDescTemp.text = weatherDescription
             binding.textNomeCidade.text = "São Paulo"
             binding.textDiaMesSemana.text = getCurrentTime()
+            binding.imageTempo.setImageResource(weatherIcon)
         }
 
         // Buscar clima para São Paulo (-23.5505, -46.6333)

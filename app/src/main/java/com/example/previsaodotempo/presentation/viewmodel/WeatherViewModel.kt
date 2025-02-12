@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.previsaodotempo.R
 import com.example.previsaodotempo.data.remote.repository.IWeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -73,7 +74,7 @@ class WeatherViewModel @Inject constructor(
         )
     }
 
-    fun getWeatherDescription(code: Int): String {
+    fun getWeatherDescription(code: Int,): String {
         return when (code) {
             0 -> "Ensolarado"
             1, 2, 3 -> "Parcialmente Nublado"
@@ -83,6 +84,18 @@ class WeatherViewModel @Inject constructor(
             71, 73, 75 -> "Neve"
             95, 96, 99 -> "Tempestade"
             else -> "Desconhecido"
+        }
+    }
+    fun getWeatherIcon(code: Int): Int {
+        return when (code) {
+            0 -> R.drawable.sun // Ícone para "Ensolarado"
+            1, 2, 3 -> R.drawable.nebuloso // Ícone para "Parcialmente Nublado"
+            45, 48 -> R.drawable.nebuloso // Ícone para "Neblina"
+            51, 53, 55 -> R.drawable.cloudy // Ícone para "Garoa"
+            61, 63, 65 -> R.drawable.chuva // Ícone para "Chuva"
+            71, 73, 75 -> R.drawable.snow // Ícone para "Neve"
+            95, 96, 99 -> R.drawable.tempestade // Ícone para "Tempestade"
+            else -> R.drawable.desconhecido // Ícone para "Desconhecido"
         }
     }
 }
