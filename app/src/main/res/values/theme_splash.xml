@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/Preto_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_splash</item>
+        <item name="android:windowSplashScreenBrandingImage"> @drawable/andersonpsdev</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.Previsaodotempo</item>
+    </style>
+</resources>

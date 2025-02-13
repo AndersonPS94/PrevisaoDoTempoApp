@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.previsaodotempo.presentation.ui.adapters.ViewPagerAdapter
 import com.example.previsaodotempo.databinding.ActivityMainBinding
 import com.example.previsaodotempo.presentation.viewmodel.WeatherViewModel
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: WeatherViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
 
 
