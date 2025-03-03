@@ -45,6 +45,9 @@ dependencies {
     implementation libs.androidx.core.splashscreen
     // JUnit para testes unitários
     testImplementation libs.junit
+    testImplementation 'org.mockito.kotlin:mockito-kotlin:4.0.0'
+
+
 
     // Mockk para criar mocks e simular dependências
     testImplementation libs.mockk
