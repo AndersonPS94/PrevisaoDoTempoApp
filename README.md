@@ -36,7 +36,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ✅ **Retrofit**  
 ✅ **XML Layouts**  
 ✅ **Open Meteo API**      
-✅ **Injeção de dependências com o Hilt**
+✅ **Injeção de dependências com o Hilt**            
 ✅ **Testes unitarios com JUnit e Mockito**
 ---
 
